@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="fileUpload" />
+            Select File to Upload: <input id="fileUpload" type="file" multiple="multiple" />
+
+            <input id="btnUploadFile" type="button" value="Upload File" />
+        </div>
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#btnUploadFile').on('click', function () {
+
+            var data = new FormData();
+
+            var files = $("#fileUpload").get(0).files;
+            $.each($("#fileUpload").get(0).files, function (i, file) {
+                data.append("file", file);
+            });
+            // Add the uploaded image content to the form data collection
+            if (files.length > 0) {
+                // Make Ajax request with the contentType = false, and procesDate = false
+                $.ajax({
+                    type: "POST",
+                    url: "https://hqtasec01n.idb.iadb.org/SPservices/api/count",
+                    contentType: false,
+                    dataType: "jsonp",
+                    processData: false,
+                    data: data
+                })
+                .done(function (data_) {
+                    console.log(data_);
+                });
+            }
+        });
+    });
+</script>
