@@ -54,8 +54,10 @@ namespace SPservices.Controllers
 
             //var fromDate = "11/09/2017";
             //var toDate =  "18/09/2017"; 
+
             var fromDate = "20170101";
-            var toDate = "20171231"; 
+            
+            var toDate = "20181231"; 
 
             var cs = "Data Source=DPSSRV02;Initial Catalog=Agenda;User ID=webuser;Password=colbra2K";
             //var sp = ConfigurationManager.AppSettings["SP_PIC_FORM_GET_TOPIC_TIP_BY_LANGUAGE"];
