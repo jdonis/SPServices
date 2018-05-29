@@ -59,7 +59,7 @@ namespace SPservices.Controllers
             
             var toDate = "20181231"; 
 
-            var cs = "Data Source=DPSSRV02;Initial Catalog=Agenda;User ID=webuser;Password=colbra2K";
+            
             //var sp = ConfigurationManager.AppSettings["SP_PIC_FORM_GET_TOPIC_TIP_BY_LANGUAGE"];
             var _serie = ""; 
             if (serie != "all"){
